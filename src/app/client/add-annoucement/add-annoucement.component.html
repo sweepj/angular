@@ -1,0 +1,14 @@
+<h2>Add new Annoucement</h2>
+<div>
+  <select name="name_brand" [formControl]="brandControl">
+    <option *ngFor="let brand of brands" [ngValue]="brand.id">{{brand.name_brand}}</option>
+  </select>
+  <form [formGroup]="annoucementGroup" (ngSubmit)="onSubmitAnnoucement()">
+    <select formControlName="modelId">
+        <option *ngFor="let model of model$ | async" [ngValue]="model.id" >{{model.name_model}}</option>
+    </select>
+    <input formControlName="colorId"/>
+    <input formControlName="year">
+    <button [disabled]="annoucementGroup.invalid" type="Submit">Add annoucement Submit mode</button>
+  </form>
+</div>

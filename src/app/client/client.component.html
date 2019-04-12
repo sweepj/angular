@@ -1,0 +1,15 @@
+<div>
+  <ul>
+    <li class="annoucement_list" *ngFor="let annou of annous">
+      <img class="default_img" src="https://lapiojeria.com/img/sucursales/suc-1.jpg" alt="image">
+      <ul class="annoucement_list-detail">
+        <li class='space'>ID: {{annou.id}}</li>
+        <li class='space'>Model: {{annou.name_model}}</li>
+        <li class='space'>Brand: {{annou.name_brand}}</li>
+        <li class='space'>Color: {{annou.name_color}}</li>
+        <li class='space'>Year: {{annou.year}}</li>
+      </ul>
+    </li>
+  </ul>
+  <a routerLink='/client/createAnnoucement/'>Create new Annoucement</a>
+</div>

@@ -1,0 +1,28 @@
+<!-- <div>
+  <ul>
+    <li *ngFor="let annou of annous">
+      <span class='space'>{{annou.id}}</span>
+      <span class='space'>{{annou.name_model}}</span>
+      <span class='space'>{{annou.name_brand}}</span>
+      <span class='space'>{{annou.name_color}}</span>
+      <span class='space'>{{annou.year}}</span>
+    </li>
+  </ul>
+</div> -->
+
+<table class="space">
+  <tr >
+    <th>ID</th>
+    <th>MODEL</th>
+    <th>BRAND</th>
+    <th>COLOR</th>
+    <th>YEAR</th>
+  </tr>
+  <tr *ngFor="let annou of annous">
+    <td>{{annou.id}}</td>
+    <td>{{annou.name_model}}</td>
+    <td>{{annou.name_brand}}</td>
+    <td>{{annou.name_color}}</td>
+    <td>{{annou.year}}</td>
+  </tr>
+</table>

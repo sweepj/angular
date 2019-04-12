@@ -20,19 +20,19 @@ export class AddAnnoucementComponent implements OnInit {
   brands: Brand[] = [];
   private searchId = new Subject<string>();
 
-
   constructor(private clientService: ClientService) { }
 
 
   brandControl = new FormControl(null, Validators.required);
 
 
-
   annoucementGroup = new FormGroup({
     modelId: new FormControl(null, Validators.required),
     colorId: new FormControl(null, Validators.required),
-    year: new FormControl(null,Validators.required)
+    year: new FormControl(2019,Validators.required)
   });
+
+  listYear: number[] = [];
 
   get modelId(): any{ return this.annoucementGroup.get('modelId')}
   get colorId(): any{return this.annoucementGroup.get('colorId')}
@@ -85,8 +85,11 @@ export class AddAnnoucementComponent implements OnInit {
   }
 
   dateGenerate(){
-    let now = new Date();
-    console.log(now.getFullYear());
+    let now = new Date().getFullYear();
+    for( now; now > 1950; now--){
+      this.listYear.push(now);
+    }
+    console.log(this.listYear);
   }
   getBrand(){
     return this.clientService.getBrand();

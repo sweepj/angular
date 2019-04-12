@@ -8,7 +8,9 @@
         <option *ngFor="let model of model$ | async" [ngValue]="model.id" >{{model.name_model}}</option>
     </select>
     <input formControlName="colorId"/>
-    <input formControlName="year">
+    <select formControlName="year">
+      <option *ngFor="let date of listYear" [ngValue]="date">{{date}}</option>
+    </select>
     <button [disabled]="annoucementGroup.invalid" type="Submit">Add annoucement Submit mode</button>
   </form>
 </div>
